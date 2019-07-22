@@ -1,12 +1,49 @@
 # Docker 101 Tutorial
 
-This repo is result of small tutorial session, that I gave for my classmates at Innopolis University.
-
-nodejs-app directory contains draft of todo-app from [this](https://mherman.org/blog/postgresql-and-nodejs/) tutorial. 
+A docker tutorial, taken from \@alikhil, sprinkled with Data Science and presented to my colleagues.
 
 [Link to presentation.](/docker-101.pdf)
 
-## Links from presentation
+## How to ...
 
-- [How to reduce docker image size](https://hackernoon.com/tips-to-reduce-docker-image-sizes-876095da3b34)
-- [VM vs containers](https://www.backblaze.com/blog/vm-vs-containers/)
+### Useful commands
+Show all running containers. "ps" stands for process status
+```
+docker ps
+```
+
+Show all containers, including stopped.
+```
+docker ps
+```
+
+Show all available images.
+```
+docker image ls
+```
+
+
+### Writing a Dockerfile
+```
+# Source: https://github.com/docker-for-data-science/docker-for-data-science-tutorial/
+# EACH COMMAND CREATES A NEW IMAGE LAYER
+
+# Use latest Python runtime as base image
+FROM python:3.6.5-alpine3.7
+
+# Set the working directory to /app and copy current dir
+WORKDIR /app
+COPY ./app /app
+
+# Run hello_world.py when the container launches
+CMD ["python", "hello_world.py"]
+```
+
+### Building an image
+```
+docker build -t my_image
+```
+### Starting a container
+```
+docker run -it my_image
+```
