@@ -2,7 +2,7 @@
 
 A docker tutorial, taken from \@alikhil, sprinkled with Data Science and presented to my colleagues.
 
-[Link to presentation.](/docker-101.pdf)
+[Link to presentation.](/Docker%20101.pdf)
 
 ## How to ...
 
