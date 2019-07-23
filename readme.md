@@ -14,7 +14,7 @@ docker ps
 
 Show all containers, including stopped.
 ```
-docker ps
+docker ps -a
 ```
 
 Show all available images.
